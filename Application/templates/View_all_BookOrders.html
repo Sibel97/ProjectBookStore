@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <Title> BookShop </Title>
+        <meta author> Sibel Hassan </meta>
+    </head>
+    <body style=" background-color: slategrey;">
+        <h1><u>The Bookshop</u></h1>
+        <h3>Book Orders:</h3>
+        <p>-----------------------------------------------------------------------------------------</p>
+        {% for orders in BookOrders %}
+        {{orders}}<br>
+        {% endfor %}
+        <p>-----------------------------------------------------------------------------------------</p>
+    </body>
+</html>
