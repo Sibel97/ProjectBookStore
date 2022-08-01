@@ -7,7 +7,7 @@ from datetime import date
 class CustomerForm(FlaskForm):
     Forename = StringField('Forename', validators=[DataRequired(), Length(min=1, max=30)])
     Surname = StringField('Surname', validators=[DataRequired(), Length(min=1, max=30)])
-    Email = StringField('Email', validators=[DataRequired(), Email(), Length(min=5, max=30)])
+    Email = StringField('Email', validators=[DataRequired(), Email(message="Enter a valid email"), Length(min=5, max=30)])
     Address = StringField('Address', validators=[DataRequired(), Length(min=10, max=50)])
     Number = StringField ('Number')
     submit = SubmitField('Enter')

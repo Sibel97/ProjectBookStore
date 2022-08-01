@@ -51,7 +51,8 @@ def create_new_customer():
         db.session.add(new_customer)
         db.session.commit()
         return redirect(url_for('view_customers'))
-    return render_template('customer_form.html', form=form)
+    errors = form.Email.errors
+    return render_template('customer_form.html', form=form, errors = errors)
 
 #Create Book - FORM
 @app.route('/Enter-book', methods=['GET', 'POST'])

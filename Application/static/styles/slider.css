@@ -11,7 +11,7 @@ html, body {
   }
   
   .slider-container{
-    height: 85%;
+    height: 95%;
     width: 100%;
     position: relative;
     overflow: hidden; 
@@ -53,7 +53,7 @@ html, body {
   [id^="slide"]:checked + .slide {
     left: 0;
     z-index: 100;
-    transition: left .2s ease-out;
+    transition: left .20s ease-out;
   }
   
   .slide-1 {
