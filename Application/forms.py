@@ -2,7 +2,7 @@ from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DateField, SelectField, TextAreaField, IntegerField, FloatField
 from wtforms.validators import DataRequired, Length, ValidationError, Email, email_validator
-from datetime import date
+from datetime import date, datetime
 
 class CustomerForm(FlaskForm):
     Forename = StringField('Forename', validators=[DataRequired(), Length(min=1, max=30)])
@@ -42,7 +42,7 @@ class SearchCustomer(FlaskForm):
 
 class CreateOrder(FlaskForm):
      customerID = IntegerField('CustomerID',validators=[DataRequired()])
-     orderDate = DateField ('Date placed', validators=[DataRequired()])
+     orderDate = DateField ('Date placed',default=datetime.today, validators=[DataRequired()])
      submit = SubmitField('Enter')
 
 class CreateBookOrder(FlaskForm):
