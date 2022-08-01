@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <Title> BookShop </Title>
+        <meta author> Sibel Hassan </meta>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/slider.css') }}">
+    </head>
+    <body style=" background-color: slategrey;">
+        <h1 style= "text-align: center; font-size:45px;"><u>The Bookshop</u></h1>
+        <nav style="background: black; padding: 15px; text-align: center; font-size:16px;">
+            <a style="color:white;margin-right:100px;" href=view-customers>Customers</a>
+            <a style="color:white;margin-right:100px;" href=view-books>Books</a>
+            <a style="color:white;margin-right:100px;" href=view-orders>Orders</a>
+            <a style="color:white;margin-right:100px;" href=view-bookorders>BookOrders</a>
+        </nav>
+        <br/> <br/>
+        {% block body %}
+        
+        <div class="slider-container">
+            <div class="menu">
+              <label for="slide-dot-1"></label>
+              <label for="slide-dot-2"></label>
+              <label for="slide-dot-3"></label>
+            </div>
+            
+            <input id="slide-dot-1" type="radio" name="slides" checked>
+              <div class="slide slide-1"></div>
+            
+            <input id="slide-dot-2" type="radio" name="slides">
+              <div class="slide slide-2"></div>
+            
+            <input id="slide-dot-3" type="radio" name="slides">
+              <div class="slide slide-3"></div>
+          </div>
+        {% endblock body %}
+    </body>
+</html>

@@ -6,6 +6,10 @@ from datetime import date
 from sqlalchemy import select, update, delete, or_
 from Application.forms import *
 
+@app.route("/")
+def index():
+    return render_template("Index.html")
+
 #Read/view customers
 @app.route('/view-customers')
 def view_customers():
