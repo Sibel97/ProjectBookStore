@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <Title> BookShop </Title>
+        <meta author> Sibel Hassan </meta>
+    </head>
+    <body style=" background-color: slategrey;">
+        <h1 style= "text-align: center; font-size:45px;"><u>The Bookshop</u></h1>
+        <nav style="background: black; padding: 15px; text-align: center; font-size:16px;">
+            <a style="color:white;margin-right:100px;" href=view-customers>Customers</a>
+            <a style="color:white;margin-right:100px;" href=view-books>Books</a>
+            <a style="color:white;margin-right:100px;" href=view-orders>Orders</a>
+            <a style="color:white;margin-right:100px;" href=view-bookorders>BookOrders</a>
+        </nav>
+        <h3>Orders:</h3>
+        <p>-----------------------------------------------------------------------------------------</p>
+        {% for order in orders %}
+        {{order}}<br>
+        {% endfor %}
+        <p>-----------------------------------------------------------------------------------------</p>
+        <a href=create-order>
+            <button>Create Order</button>
+        </a>
+    </body>
+</html>

@@ -1,5 +1,5 @@
-from Application import db
-from Application.models import * 
+from application import db
+from application.models import * 
 from datetime import date
 
 db.drop_all()
