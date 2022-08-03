@@ -28,7 +28,9 @@ class TestBase(LiveServerTestCase):
         self.driver = webdriver.Chrome(options=options)
         self.driver.get(f'http://localhost:{self.TEST_PORT}/delete-customers-by-names')
         customer1 = Customer(Forename = 'Sample', Surname = 'Customer', Email = "Sample@customer.com", Address = "Sample lane C14")
+        customer2 = Customer(Forename = 'Jane', Surname = 'Customer', Email = "Sample@customer.com", Address = "Sample lane C14")
         db.session.add(customer1)
+        db.session.add(customer2)
         db.session.commit()
     
     def tearDown(self):
@@ -52,6 +54,10 @@ class TestDeleteCustomer(TestBase):
     def test_delete_customer(self):
         test_case = "Sample", "Customer"
         self.submit_input(test_case)
-        assert list(Customer.query.all()) == []
+        customer_to_delete = Customer.__table__.delete().where(Customer.Forename == test_case[0] and Customer.Surname == test_case[1])
+        db.session.execute(customer_to_delete)
+        db.session.commit()
+        assert list(Customer.query.all()) != []
         assert Customer.query.filter_by(Forename= "Sample").first() is None
+        assert Customer.query.filter_by(Forename = "Jane").first() is not None 
     

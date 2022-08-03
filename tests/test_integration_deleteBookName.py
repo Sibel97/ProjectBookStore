@@ -25,11 +25,13 @@ class TestBase(LiveServerTestCase):
         db.create_all()
         options = webdriver.chrome.options.Options()
         options.add_argument('--headless')
+        book1 = Book(ISBN = '9780393972832', Title = 'Moby Dick', Author = "Herman Melville", Price = 5.99)
+        book2 = Book(ISBN = ' 9780393972831', Title = '1984', Author = "George Orwell", Price = 5.99)
+        db.session.add(book1)
+        db.session.add(book2)
+        db.session.commit()
         self.driver = webdriver.Chrome(options=options)
         self.driver.get(f'http://localhost:{self.TEST_PORT}/delete-book-by-name')
-        book1 = Book(ISBN = ' 9780393972832', Title = 'Moby Dick', Author = "Herman Melville", Price = 5.99)
-        db.session.add(book1)
-        db.session.commit()
     
     def tearDown(self):
         self.driver.quit()
@@ -50,5 +52,10 @@ class TestDeleteBookName(TestBase):
     def test_delete_bookName(self):
         test_case = "Moby Dick"
         self.submit_input(test_case)
+        bookT_to_delete = Book.__table__.delete().where(Book.Title == test_case)
+        db.session.execute(bookT_to_delete)
+        db.session.commit()
         assert list(Book.query.all()) != []
-        assert Book.query.filter_by(Title= "Moby Dick").first() is not None
+        assert Book.query.filter_by(ISBN = '9780393972832').first() is None
+        assert Book.query.filter_by(Title = "Moby Dick").first() is None
+        assert Book.query.filter_by(Title = "1984").first() is not None
