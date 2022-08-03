@@ -71,7 +71,6 @@ def Enter_book():
         return redirect(url_for('view_books'))
     return render_template('book_form.html', form=form)
 
-
 #Create Order - FORM
 @app.route('/create-order', methods=['GET', 'POST'])
 def create_Order():
@@ -183,9 +182,9 @@ def delete_customers_by_names():
         return redirect(url_for('view_customers'))
     return render_template('delete-customer-name.html', form=form)
 
-@app.route('/delete-customer/<int:CustomerID>')
-def delete_customer(CustomerID):
-    customer_to_delete = Customer.query.get(CustomerID)
+@app.route('/delete-customer/<int:ID>')
+def delete_customer(ID):
+    customer_to_delete = Customer.query.get(ID)
     db.session.delete(customer_to_delete)
     db.session.commit()
     return redirect(url_for('view_customers'))

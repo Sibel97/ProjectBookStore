@@ -18,7 +18,7 @@ class TestBase(TestCase):
 
     def setUp(self): # runs before each test
         db.create_all()
-        customer1 = Customer(Forename = 'Sample', Surname = 'Customer', Email = "Sample@customer.com", Address = "Sample lane C14")
+        customer1 = Customer(ID = 1,Forename = 'Sample', Surname = 'Customer', Email = "Sample@customer.com", Address = "Sample lane C14")
         book1 = Book(ISBN = ' 9780393972832', Title = 'Moby Dick', Author = "Herman Melville", Price = 5.99)
         order1 = Orders(customerID = 1, orderDate = date.today())
         bookOrder1 = BookOrder( orderID = 1, ISBN = '9780393972832', Quantity = 1)
@@ -103,7 +103,7 @@ class TestHomePage(TestBase):
     #Others are deleted via forms
     def test_get_delete_customer(self):
         response = self.client.get(
-            url_for('delete_customer', CustomerID=1),
+            url_for('delete_customer', ID=1),
             follow_redirects = True
         )
         self.assert200(response)
@@ -133,3 +133,85 @@ class TestHomePage(TestBase):
         response = self.client.get(url_for('view_customer_by_name', name = 'Sample'))
         self.assert200(response)
         self.assertIn(b'Sample Customer', response.data)
+
+
+class TestPostRequests(TestBase):
+    def test_post_add_customer(self):
+        response = self.client.post(
+            url_for('create_new_customer'),
+            data = dict(ID = 1, Forename = 'Simple', Surname = 'Customer', Email = "Simple@customer.com", Address = "Simple lane C14"),
+            follow_redirects = True
+        )
+
+        self.assert200(response)
+        assert Customer.query.filter_by(Forename='Simple').first() is not None
+
+    def test_post_update_Customer(self):
+        response = self.client.post(
+            url_for('update_customer', ID=1),
+            data = dict(ID = 1,Forename='New', Surname='Surname', Email = "Simple@customer.com", Address = "Simple lane C14"),
+            follow_redirects=True
+        )
+        self.assert200(response)
+        assert Customer.query.filter_by(Forename='New').first() is not None
+        assert Customer.query.filter_by(Surname='Surname').first() is not None
+        assert Customer.query.filter_by(Forename = "Simple").first() is None
+    
+    def test_post_delete_Customer(self):
+        response = self.client.post(
+            url_for('delete_customer', ID=1),
+            follow_redirects=True
+        )
+        self.assert405(response)
+        assert Customer.query.filter_by(Forename=' ').first() is None
+
+    def test_post_add_book(self):
+        response = self.client.post(
+            url_for('Enter_book'),
+            data = dict(ISBN = '9780393972832', Title = 'Moby Dick', Author = "Herman Melville", Price = 5.99),
+            follow_redirects = True
+        )
+        self.assert200(response)
+        assert Book.query.filter_by(Title='Moby Dick').first() is not None
+        assert Book.query.filter_by(Author= 'Herman Melville').first() is not None
+        assert Book.query.filter_by(Title = '1984').first() is None
+    
+    
+    def test_post_add_order(self):
+        response = self.client.post(
+            url_for('create_Order'),
+            data = dict(customerID = 1, orderDate = date.today()),
+            follow_redirects = True
+        )
+        self.assert200(response)
+        today = date.today()
+        assert Orders.query.filter_by(orderDate= today).first() is not None
+
+    def test_post_add_BookOrder(self):
+        response = self.client.post(
+            url_for('create_BookOrder'),
+            data = dict(BookOrderID = 1, orderID = 1, ISBN = '9780393972832', Quantity = 5),
+            follow_redirects = True
+        )
+        self.assert200(response)
+        assert BookOrder.query.filter_by(ISBN = '9780393972832').first() is not None
+    
+    def test_post_update_BookOrder(self):
+        response = self.client.post(
+            url_for('update_BookOrder', ID=1),
+            data = dict(BookOrderID = 1, orderID = 1, ISBN = '9780393972832', Quantity = 6),
+            follow_redirects=True
+        )
+        self.assert200(response)
+        assert BookOrder.query.filter_by(orderID = 1).first() is not None
+
+
+    def test_post_delete_book(self):
+        response = self.client.post(
+            url_for('delete_BookOrder'),
+            follow_redirects=True
+        )
+        self.assert200(response)
+        assert BookOrder.query.filter_by(Quantity=' ').first() is None
+
+
