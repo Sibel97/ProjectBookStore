@@ -53,7 +53,7 @@ class TestHomePage(TestBase):
     def test_get_orders(self):
         response = self.client.get(url_for('view_orders'))
         self.assert200(response)
-        self.assertIn(b'2022-08-02', response.data)
+        self.assertIn(b'2022-08-03', response.data)
 
     def test_get_bookOrders(self):
         response = self.client.get(url_for('view_BookOrders'))
