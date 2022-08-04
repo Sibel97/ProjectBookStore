@@ -88,7 +88,7 @@ def create_Order():
 @app.route('/create-BookOrder', methods=['GET', 'POST'])
 def create_BookOrder():
     form = CreateBookOrder()
-    if request.method == 'POST':
+    if form.validate_on_submit():
         OrderID = form.OrderID.data
         ISBN = form.ISBN.data
         Quantity = form.Quantity.data
