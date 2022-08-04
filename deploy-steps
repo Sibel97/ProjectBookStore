@@ -1,6 +1,6 @@
 if [ -d project ]; then
   cd project && git pull origin master
-else;
+else then 
   git clone https://github.com/Sibel97/ProjectBookStore Project
   cd project
 fi
