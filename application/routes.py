@@ -251,7 +251,6 @@ def customer_search():
     if form.validate_on_submit():
         customers = form.Name.data
         search = map(str,Customer.query.filter(Customer.Forename.like(f'%{customers}%')).all())
-        #map(str,Customer.query.filter((Customer.Forename.like(f'%{customers}%' or Customer.Surname.like(f'%{customers}$')))).all())
         return render_template('get_customer_by_name.html', customers = search)
     return render_template('customer-search-form.html', form=form)
 
