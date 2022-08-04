@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo apt-get update
 sudo apt install python3 python3-pip python3-venv chromium-browser wget unzip -y
 
 version=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(chromium-browser --version | grep -oP 'Chromium \K\d+'))
