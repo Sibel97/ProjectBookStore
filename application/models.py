@@ -1,7 +1,6 @@
 from sqlalchemy import ForeignKey
 from application import db
 from sqlalchemy import select, delete, update
-from tabulate import tabulate
 
 
 class Customer(db.Model):
