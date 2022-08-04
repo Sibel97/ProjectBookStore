@@ -1,5 +1,5 @@
 if [ -d project ]; then
-  cd project && git pull origin master
+  cd project && git pull origin master --allow-unrelated-histories
 else 
   git clone https://github.com/Sibel97/ProjectBookStore project
   cd project 
