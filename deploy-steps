@@ -1,7 +1,7 @@
 if [ -d project ]; then
   cd project && git pull origin master
-else then 
-  git clone https://github.com/Sibel97/ProjectBookStore Project
+else 
+  git clone https://github.com/Sibel97/ProjectBookStore ProjectBookStore
   cd project
 fi
 
