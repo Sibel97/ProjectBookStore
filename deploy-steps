@@ -2,7 +2,7 @@ if [ -d project ]; then
   cd project && git pull origin master
 else 
   git clone https://github.com/Sibel97/ProjectBookStore ProjectBookStore
-  cd project
+  cd ProjectBookStore
 fi
 
 sudo apt install python3 python3-pip python3-venv -y
