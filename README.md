@@ -77,6 +77,8 @@ Below is an example of the forms created, the forms had validators that ensured 
 <img src = "https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/forms.png"> <br/>
 Below is a list of the templates created within a template folder which included all of the html within the application, whether it was how to output the data or a html form that broke down the different elements to the form. <br/>
 <img src = "https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/templates.png"> <br/>
+The burn down chart below details the number of sprints and tasks to be completed for this project in relation to the time I gave myself to have everything completed in days. I expected everything to take me about 12 days, from design to deployment. The burndown chart shows the relation of the expected time of completing the sprint, vs the actual time it took. Overall certain sprints deviated from the plan either because of running into issues or errors, but all in all the entire project estimation time was correct. <br/>
+<img src = "https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/burndown.png"><br/>
 #### Version Control <br/>
 During the implementation of my application, it was linked to a github repository within visual studio that allowed me to add, commit and push changes once they were completed and working well. This allowed me to keep track of the different changes being made to the application as well as having the ability to go back to a previously working version if I had an error that damaged the system.<br/>
 <img src ="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/git%20hub.png" width ="700" height="500"> <br/>
