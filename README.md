@@ -41,17 +41,25 @@ For the design purposes of this project, it was clear from the brief that to rea
 The Entity Relationship Diagram (ERD) shows the relationships between the four tables within the database and the primary and foreign keys within the tables and where they link.
 
 ### Jira
-Jira website was used to create use cases and epics based on what the customer needs the project to be able to do based on the tasks and activities they would be carrying out. From these use cases, I created a sprint backlog and tasks to complete these requirements.\ 
-https://sibel-hassan.atlassian.net/jira/software/projects/BS/boards/1 
-<img src="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Jira%20story%20example.png"  width="400" height="600">
+Jira website was used to create use cases and epics based on what the customer needs the project to be able to do based on the tasks and activities they would be carrying out. From these use cases, I created a sprint backlog and tasks to complete these requirements. <br/>
+https://sibel-hassan.atlassian.net/jira/software/projects/BS/boards/1 <br/>
+<img src="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Jira%20story%20example.png"  width="400" height="600"> <br/>
 This is an example of one of the user stories within the sprint backlog of the project, As a user they want to be able to store customers for later use. This gives a requirement to fulfil. 
 Using these stories, epics and tasks, I created a sprint backlog of all the tasks splint into manag eable tasks to complete. 
-<img src="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Jira%20backlog.png">
-These sprints detail the tasks that need to be completed within a specific amount of time.\ Each of the  
+<img src="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Jira%20backlog.png">   <br/>
+These sprints detail the tasks that need to be completed within a specific amount of time. <br/> Each of the tasks or user stories within the sprint is given a priority level in accordance to how important and vital it is to the project as well as a story point using the fibonacci numbers. The higher the number, the higher the estimated time and effort it would take to implement said user story or task. All of these points are then tallied to give the total story points for each sprint, giving a better indication as to how long the sprint will take and the difficulty of completing it. Within Jira, a sprint actively being worked on is able to be seperated into three columns, to do, in progress and done. This allowed me to keep track of each stage of the sprints more effectively. <br/>
+<img src="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/sprint%202%20jira.png" width ="700" height="500"> <br/>
 
-###Trello\
-https://trello.com/b/duZedUaG/project\
-Trello was another tool used in project management, where Jira focused on the sprints and functionality, Trello focused more on breaking the project into MoSCoW - the different tasks the project must have, should have, could have and won't have. This allowed me to get a clear understanding of what was a priority to reach MVP. 
+### Trello <br/>
+https://trello.com/b/duZedUaG/project <br/>
+Trello was another tool used in project management, where Jira focused on the sprints and functionality, Trello focused more on breaking the project into MoSCoW - the different tasks the project must have, should have, could have and won't have. This allowed me to get a clear understanding of what was a priority to reach MVP. As well as this, Trello gave me a place I can keep note of the different modules and libraries I would need to install in python in order to achieve the functionality required. My Trello board was also used to keep track of any errors encountered that were of note and areas in which I feel the application could have been improved if it was to be developed further. <br/>
+<img src="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Trello.png" width ="900" height ="500"> <br/>
+
+### Risk Assessment <br/>
+As part of the design stage of the project a risk assessment was created to try and identify the areas within the project that held the most potential to cause errors. Once these errors where identified they were broken down into evaluation, impact level, liklihood, responsibility, actions and preventions. For the purpose of this project all of the responsibilty lies within me, but in a team scenario or professional project it would be delegated/ passed over to the appropriate parties. By identifying these potential issues, control measures and fixes, I was able to better prepare for any of these scenarios and better avoid them from happening at all. <br/>
+<img scr="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Risk%20Assessment.png" width = "800" height = "400"> <br/>
+
+
 
 
 
