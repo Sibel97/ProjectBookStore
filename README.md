@@ -57,7 +57,19 @@ Trello was another tool used in project management, where Jira focused on the sp
 
 ### Risk Assessment <br/>
 As part of the design stage of the project a risk assessment was created to try and identify the areas within the project that held the most potential to cause errors. Once these errors where identified they were broken down into evaluation, impact level, liklihood, responsibility, actions and preventions. For the purpose of this project all of the responsibilty lies within me, but in a team scenario or professional project it would be delegated/ passed over to the appropriate parties. By identifying these potential issues, control measures and fixes, I was able to better prepare for any of these scenarios and better avoid them from happening at all. <br/>
-<img scr="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Risk%20Assessment.png" width = "800" height = "400"> <br/>
+<img src="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Risk%20Assessment.png" width = "500" height="500"> <br/>
+
+### Implementation <br/>
+#### Google Cloud Platform <br/>
+Taking all of the designs above, the use cases, sprint backlogs and current sprints and the risk assessment, the application could finally begin to be implemented. This was done within visual studio code using python, before anything could begin a python extention was installed as well as ssh remote window which would later allow us to connect to a virtual instance created on Google Cloud Platform in order to run our flask web app. For the purpose of this project a trial of GCP was utilizied in order to create an instance for our web application to run on as well as a mySQL database that would store all of our information. The below picture is of the instances within GCP used within this project, the project initially being run on instance1 using a generated SSH key to connect to VScode. <br/>
+<img src = "https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/GCP%20instances.png"> <br/>
+The instances, with the correct set up and firewall rules, was able to run the web application on port 5000, designed for flask apps. From here I was able to manually go through the web application after each run and check my functionality was working as it should. <br/>
+#### Google Cloud Platform SQL <br/>
+Within GCP a sql instance was also created in order to take our data being processed from our running web app, and the create.py file, and save it to a database that could be accessed at any point. This data could be accessed within the functions defined in the project while the application was running on our GCP instance, but it could also be viewed on the mySQL terminal in GCP. <br/>
+<img src ="https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/SQL%20Show%20tables.png">
+<img src = "https://raw.githubusercontent.com/Sibel97/ProjectBookStore/master/ReadMe%20Pics/Customers%20table.png"> <br/>
+#### Python <br/>
+The application was coded in python in visual studio code using a remote window connected to the instance created in gcp. 
 
 
 
